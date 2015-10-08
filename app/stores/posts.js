@@ -1,13 +1,11 @@
 import createWithMiddleware from '../middleware/main'
+import Immutable from 'immutable'
 
-function posts(state = [], action) {
+function posts(state = Immutable.List(), action) {
 
   switch (action.type) {
     case 'create':
-      return [{
-      text: action.text,
-      completed: false
-    }, ...state];
+      return state.unshift({text: action.text, completed: false})
     default:
       return state;
   }
