@@ -17,7 +17,7 @@ class App extends React.Component {
             dispatch(addTodo(text))
         }/>
         <TodoList
-          todos={posts || []}
+          todos={posts}
           onTodoClick={index =>
             console.log('todo clicked', index)
           } />
