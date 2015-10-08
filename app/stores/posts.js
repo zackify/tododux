@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import createWithMiddleware from '../middleware/main'
 
 function posts(state = [], action) {
 
@@ -13,6 +13,4 @@ function posts(state = [], action) {
   }
 }
 
-// Create a Redux store holding the state of your app.
-// Its API is { subscribe, dispatch, getState }.
-export default createStore(posts)
+export default createWithMiddleware(posts)
