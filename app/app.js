@@ -3,7 +3,7 @@ import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 
 import { connect } from 'react-redux';
-import { addTodo } from './actions/post'
+import { addTodo, removeTodo } from './actions/post'
 import store from './stores/posts'
 
 class App extends React.Component {
@@ -19,7 +19,7 @@ class App extends React.Component {
         <TodoList
           todos={posts}
           onTodoClick={index =>
-            console.log('todo clicked', index)
+            dispatch(removeTodo(index))
           } />
       </div>
     );
